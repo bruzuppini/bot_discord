@@ -1,3 +1,8 @@
+if (!process.env.TOKEN) {
+  console.error("❌ TOKEN NÃO EXISTE NO RENDER");
+  process.exit(1);
+}
+
 require('dotenv').config();
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 
