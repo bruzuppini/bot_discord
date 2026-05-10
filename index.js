@@ -172,7 +172,9 @@ client.on('voiceStateUpdate', (oldState, newState) => {
   }
 });
 
-console.log("TOKEN:", process.env.TOKEN);
+client.login(process.env.TOKEN)
+  .then(() => console.log("✅ LOGOU"))
+  .catch(err => console.error("❌ ERRO AO LOGAR:", err));
 
 client.login(process.env.TOKEN);
 
