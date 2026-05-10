@@ -20,6 +20,24 @@ const client = new Client({
   ]
 });
 
+const { REST, Routes, SlashCommandBuilder } = require('discord.js');
+
+const commands = [
+  new SlashCommandBuilder()
+    .setName('ping')
+    .setDescription('responde pong')
+    .toJSON()
+];
+
+const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+
+(async () => {
+  await rest.put(
+    Routes.applicationCommands('SEU_CLIENT_ID'),
+    { body: commands }
+  );
+})();
+
 const BOAS_VINDAS_ID = '1502872339396825230';
 const LOGS_ID = '1502858327393042523';
 
