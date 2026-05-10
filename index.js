@@ -33,7 +33,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
 (async () => {
   await rest.put(
-    Routes.applicationCommands('SEU_CLIENT_ID'),
+    Routes.applicationCommands('1502859099459555379'),
     { body: commands }
   );
 })();
