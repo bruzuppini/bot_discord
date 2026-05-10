@@ -1,14 +1,14 @@
-if (!process.env.TOKEN) {
-  console.error("❌ TOKEN NÃO EXISTE NO RENDER");
-  process.exit(1);
-}
-
 require('dotenv').config();
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 
 require('http')
   .createServer((req, res) => res.end('ok'))
   .listen(process.env.PORT || 3000);
+
+  if (!process.env.TOKEN) {
+  console.error("❌ TOKEN NÃO EXISTE NO RENDER");
+  process.exit(1);
+}
 
 const client = new Client({
   intents: [
