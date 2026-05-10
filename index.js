@@ -172,4 +172,7 @@ client.on('voiceStateUpdate', (oldState, newState) => {
   }
 });
 
+console.log("TOKEN:", process.env.TOKEN);
+
 client.login(process.env.TOKEN);
+
